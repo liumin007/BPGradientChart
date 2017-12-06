@@ -11,7 +11,7 @@
 #import "MLGradientChartPoint.h"
 
 @interface MLGradientChart : UIView
-
+ 
 @property (nonatomic)           CGFloat animationSpeedFactor;
 @property (nonatomic)           CGFloat spacing;
 @property (nonatomic)           NSUInteger maximumFractionDigits;

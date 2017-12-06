@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@import UIKit;
+@import UIKit; 
 @interface MLGradientChartItem : NSObject
 
 @property (nonatomic) CGPoint point;

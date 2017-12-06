@@ -55,7 +55,7 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     chart = [[MLGradientChart alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 300)];
-    
+       
     [self.view addSubview:chart];
     [self loadSquareChart];
     [self loadPoints];

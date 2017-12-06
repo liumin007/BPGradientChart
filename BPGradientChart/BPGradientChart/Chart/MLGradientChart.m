@@ -67,7 +67,7 @@
     self.layer.position = position;
     self.layer.anchorPoint = anchorPoint;
 }
-@end
+   
 
 @interface MLGradientChart ()
 {
