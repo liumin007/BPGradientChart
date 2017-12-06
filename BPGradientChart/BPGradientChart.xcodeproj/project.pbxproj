@@ -13,6 +13,9 @@
 		2888CD081FD7875A00D37ECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2888CD071FD7875A00D37ECA /* Assets.xcassets */; };
 		2888CD0B1FD7875A00D37ECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2888CD091FD7875A00D37ECA /* LaunchScreen.storyboard */; };
 		2888CD0E1FD7875A00D37ECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888CD0D1FD7875A00D37ECA /* main.m */; };
+		2888CD171FD78A5100D37ECA /* MLGradientChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888CD161FD78A5100D37ECA /* MLGradientChartItem.m */; };
+		2888CD1A1FD78B5400D37ECA /* MLGradientChartPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888CD191FD78B5400D37ECA /* MLGradientChartPoint.m */; };
+		2888CD1D1FD78D6C00D37ECA /* MLGradientChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2888CD1C1FD78D6C00D37ECA /* MLGradientChart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		2888CD0A1FD7875A00D37ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2888CD0C1FD7875A00D37ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2888CD0D1FD7875A00D37ECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2888CD151FD78A5100D37ECA /* MLGradientChartItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLGradientChartItem.h; sourceTree = "<group>"; };
+		2888CD161FD78A5100D37ECA /* MLGradientChartItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLGradientChartItem.m; sourceTree = "<group>"; };
+		2888CD181FD78B5400D37ECA /* MLGradientChartPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLGradientChartPoint.h; sourceTree = "<group>"; };
+		2888CD191FD78B5400D37ECA /* MLGradientChartPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLGradientChartPoint.m; sourceTree = "<group>"; };
+		2888CD1B1FD78D6C00D37ECA /* MLGradientChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLGradientChart.h; sourceTree = "<group>"; };
+		2888CD1C1FD78D6C00D37ECA /* MLGradientChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLGradientChart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 		2888CCFD1FD7875A00D37ECA /* BPGradientChart */ = {
 			isa = PBXGroup;
 			children = (
+				2888CD141FD788E600D37ECA /* Chart */,
 				2888CCFE1FD7875A00D37ECA /* AppDelegate.h */,
 				2888CCFF1FD7875A00D37ECA /* AppDelegate.m */,
 				2888CD011FD7875A00D37ECA /* ViewController.h */,
@@ -69,6 +79,19 @@
 				2888CD0D1FD7875A00D37ECA /* main.m */,
 			);
 			path = BPGradientChart;
+			sourceTree = "<group>";
+		};
+		2888CD141FD788E600D37ECA /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				2888CD151FD78A5100D37ECA /* MLGradientChartItem.h */,
+				2888CD161FD78A5100D37ECA /* MLGradientChartItem.m */,
+				2888CD181FD78B5400D37ECA /* MLGradientChartPoint.h */,
+				2888CD191FD78B5400D37ECA /* MLGradientChartPoint.m */,
+				2888CD1B1FD78D6C00D37ECA /* MLGradientChart.h */,
+				2888CD1C1FD78D6C00D37ECA /* MLGradientChart.m */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +120,7 @@
 		2888CCF31FD7875A00D37ECA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ML;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Gomtel;
 				TargetAttributes = {
@@ -142,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2888CD171FD78A5100D37ECA /* MLGradientChartItem.m in Sources */,
 				2888CD031FD7875A00D37ECA /* ViewController.m in Sources */,
 				2888CD0E1FD7875A00D37ECA /* main.m in Sources */,
 				2888CD001FD7875A00D37ECA /* AppDelegate.m in Sources */,
+				2888CD1A1FD78B5400D37ECA /* MLGradientChartPoint.m in Sources */,
+				2888CD1D1FD78D6C00D37ECA /* MLGradientChart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
