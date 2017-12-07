@@ -68,6 +68,8 @@
     self.layer.anchorPoint = anchorPoint;
 }
    
+@end
+
 
 @interface MLGradientChart ()
 {
@@ -264,6 +266,7 @@
         
 #pragma mark Squares
         for (MLGradientChartItem *item in itemsCopy) {
+            
             CGFloat newX  = MIN(maxPointX, MAX(0, (item.point.x - _zeroPoint.x)));
             CGFloat newY  = MIN(maxPointY, MAX(0, (item.point.y - _zeroPoint.y)));
             CGFloat scaleX  = maxPointX ? (newX / maxPointX) : 0;
@@ -277,43 +280,6 @@
                                                                        newHeight)];
             
             if (item.backgroundColor) { newView.backgroundColor = item.backgroundColor; }
-            
-            UILabel *horizontalLabel;
-            UILabel *verticalLabel;
-            if (newWidth > 0 &&
-                newHeight > 0) {
-                
-                // Horizontal
-                horizontalLabel = [[UILabel alloc] initWithFrame:newView.bounds];
-                horizontalLabel.text = [NSString stringWithFormat:@"%@%@",
-                                        [formatter stringFromNumber:@(item.point.x)],
-                                        item.point.x == maxPoint.x ? @"+" : @""];
-                horizontalLabel.font = font;
-                horizontalLabel.textColor = color;
-                horizontalLabel.textAlignment = NSTextAlignmentCenter;
-                [horizontalLabel sizeToFit];
-                horizontalLabel.frame = CGRectMake(newView.bounds.origin.x + newView.bounds.size.width - horizontalLabel.bounds.size.width / 2,
-                                                   newView.bounds.origin.y + newView.bounds.size.height + _spacing,
-                                                   horizontalLabel.bounds.size.width,
-                                                   horizontalLabel.bounds.size.height);
-                [newView addSubview:horizontalLabel];
-                
-                // Vertical
-                verticalLabel = [[UILabel alloc] initWithFrame:newView.bounds];
-                verticalLabel.text = [NSString stringWithFormat:@"%@%@",
-                                      [formatter stringFromNumber:@(item.point.y)],
-                                      item.point.y == maxPoint.y ? @"+" : @""];
-                verticalLabel.font = font;
-                verticalLabel.textColor = color;
-                verticalLabel.textAlignment = NSTextAlignmentRight;
-                [verticalLabel sizeToFit];
-                verticalLabel.frame = CGRectMake(newView.bounds.origin.x - verticalLabel.bounds.size.width - _spacing,
-                                                 newView.bounds.origin.y - verticalLabel.bounds.size.height / 2,
-                                                 verticalLabel.bounds.size.width,
-                                                 verticalLabel.bounds.size.height);
-                [newView addSubview:verticalLabel];
-                
-            }
             
             // Title
             UILabel *newLabel;
@@ -345,6 +311,53 @@
             }
             
             [chartView addSubview:newView];
+            
+            if (itemsCopy.firstObject == item) {
+                continue;
+            }
+            
+            UILabel *horizontalLabel;
+            UILabel *verticalLabel;
+            if (newWidth > 0 &&
+                newHeight > 0) {
+                
+                // Horizontal
+                horizontalLabel = [[UILabel alloc] initWithFrame:newView.bounds];
+                horizontalLabel.text = [NSString stringWithFormat:@"%@%@",
+                                        [formatter stringFromNumber:@(item.point.x)],
+                                        item.point.x == maxPoint.x ? @"+" : @""];
+                NSLog(@"%@", horizontalLabel.text);
+                horizontalLabel.font = font;
+                horizontalLabel.textColor = color;
+                horizontalLabel.textAlignment = NSTextAlignmentCenter;
+                
+                [horizontalLabel sizeToFit];
+                [horizontalLabel rotateLabel];
+                horizontalLabel.frame = CGRectMake(newView.bounds.origin.x + newView.bounds.size.width - horizontalLabel.bounds.size.width / 2,
+                                                   newView.bounds.origin.y + newView.bounds.size.height + _spacing,
+                                                   horizontalLabel.bounds.size.width,
+                                                   horizontalLabel.bounds.size.height);
+                [newView addSubview:horizontalLabel];
+                
+                
+                // Vertical
+                verticalLabel = [[UILabel alloc] initWithFrame:newView.bounds];
+                verticalLabel.text = [NSString stringWithFormat:@"%@%@",
+                                      [formatter stringFromNumber:@(item.point.y)],
+                                      item.point.y == maxPoint.y ? @"+" : @""];
+                verticalLabel.font = font;
+                verticalLabel.textColor = color;
+                verticalLabel.textAlignment = NSTextAlignmentRight;
+                [verticalLabel sizeToFit];
+                verticalLabel.frame = CGRectMake(newView.bounds.origin.x - verticalLabel.bounds.size.width - _spacing,
+                                                 newView.bounds.origin.y - verticalLabel.bounds.size.height / 2,
+                                                 verticalLabel.bounds.size.width,
+                                                 verticalLabel.bounds.size.height);
+                [newView addSubview:verticalLabel];
+                
+            }
+            
+            
             
             if (duration) {
                 
